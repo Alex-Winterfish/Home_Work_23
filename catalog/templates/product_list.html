@@ -45,27 +45,14 @@
 <div class="col-10">
   <h1><p class="text-center">Информация о товаре</p></h1>
 
-
-
-  <!--Колонка меню, главная, категории, заказы, контакты-->
   <div class="text-center">
   <div class="row align-items-center">
 
-
-
-    <div class="card" style="width: 15rem;">
-    <div class="card-header bg-body-secondary">
-      <h5>{{ product_name }}</h5>
-    </div>
-
-    <div class="card-body">
-    <h3 class="card-title">{{ product_price }} руб.</h3>
-    <p class="card-text"><h6>{{ product_description }}</h6></p>
-    <div class="d-grid col-12 mx-auto">
-      <button class="btn btn-outline-primary" type="button">Купить</button>
-    </div>
-    </div>
-  </div>
+      <ul class="list-group">
+          {% for product in products %}
+            <li class="list-group-items">{{ product.product_name }}</li>
+          {% endfor %}
+      </ul>
 
 
 </div>
