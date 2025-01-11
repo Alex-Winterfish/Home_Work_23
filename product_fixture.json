@@ -1,0 +1,119 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 25,
+    "fields": {
+        "product_name": "Ириска",
+        "product_description": "Вязкая конфета, для удаления зубных пломб",
+        "product_image": "",
+        "category_name": 4,
+        "product_price": 54,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 26,
+    "fields": {
+        "product_name": "Вафли",
+        "product_description": "Хрустящая сладость",
+        "product_image": "",
+        "category_name": 4,
+        "product_price": 43,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 27,
+    "fields": {
+        "product_name": "Леденцы",
+        "product_description": "Долгоиграющая конфета из патоки",
+        "product_image": "",
+        "category_name": 4,
+        "product_price": 54,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 28,
+    "fields": {
+        "product_name": "Творог",
+        "product_description": "Кисломолочный продукт",
+        "product_image": "",
+        "category_name": 5,
+        "product_price": 54,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 29,
+    "fields": {
+        "product_name": "Сметна 15%",
+        "product_description": "Кисломолочный продукт 15% жирности",
+        "product_image": "",
+        "category_name": 5,
+        "product_price": 43,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 30,
+    "fields": {
+        "product_name": "Молоко",
+        "product_description": "Коровье молоко 5% жирности",
+        "product_image": "",
+        "category_name": 5,
+        "product_price": 54,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 31,
+    "fields": {
+        "product_name": "Докторская колбаса",
+        "product_description": "Вареная колбаса из отходов мясного производства",
+        "product_image": "",
+        "category_name": 6,
+        "product_price": 54,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 32,
+    "fields": {
+        "product_name": "Московская",
+        "product_description": "Сырокопченая колбаса из отходов мясного производства",
+        "product_image": "",
+        "category_name": 6,
+        "product_price": 43,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 33,
+    "fields": {
+        "product_name": "Нарезка индилайт",
+        "product_description": "Мясной продукт из бедер индейки",
+        "product_image": "",
+        "category_name": 6,
+        "product_price": 54,
+        "created_at": "2025-01-09",
+        "updated_at": "2025-01-09"
+    }
+}
+]
