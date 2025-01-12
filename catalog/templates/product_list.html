@@ -45,14 +45,15 @@
 <div class="col-10">
   <h1><p class="text-center">Информация о товаре</p></h1>
 
-  <div class="text-center">
+  <div class="text-start">
   <div class="row align-items-center">
 
-      <ul class="list-group">
+      <ul class="list-group px-4">
           {% for product in products %}
-            <li class="list-group-items">{{ product.product_name }}</li>
+          <li class="list-group-item list-group-item-primary "><div class="row"><div class="col-8">{{ product.product_name }}</div><div class="col-4 align-item-end"><a class="btn btn-primary" href="/product_info/{{ product.id }}/">Подробнее</a></div></div></li>
           {% endfor %}
       </ul>
+
 
 
 </div>
