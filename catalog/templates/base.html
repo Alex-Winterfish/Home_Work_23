@@ -24,16 +24,16 @@
               Меню
             </p></h6>
             <div class="h4 pb-2 mb-4 border-bottom border-secondary"></div>
-            <div class="d-grid col-12 mx-auto"><a href="main.html">
+            <div class="d-grid col-12 mx-auto"><a href="/product_list/">
               <button class="btn btn-outline-primary" type="button">Главная</button></a>
             </div>
-            <div class="d-grid col-12 mx-auto"><a href="categories.html">
+            <div class="d-grid col-12 mx-auto"><a href="#">
               <button class="btn btn-outline-primary" type="button">Категории</button></a>
             </div>
-            <div class="d-grid col-12 mx-auto"><a href="catalog.html">
-              <button class="btn btn-outline-primary" type="button">Каталог</button></a>
+            <div class="d-grid col-12 mx-auto"><a href="/add_product/">
+              <button class="btn btn-outline-primary" type="button">Добавление продукта</button></a>
             </div>
-            <div class="d-grid col-12 mx-auto"><a href="contacts.html">
+            <div class="d-grid col-12 mx-auto"><a href="/contacts/">
               <button class="btn btn-outline-primary" type="button">Контакты</button></a>
             </div>
           </a>
@@ -43,13 +43,13 @@
     </div>
 
 <div class="col-10">
-  <h1><p class="text-center">Информация о товаре</p></h1>
+  <h1><p class="text-center">{% block title %}{% endblock %}</p></h1>
 
   <div class="text-start">
   <div class="row align-items-center">
 
 
-    {% block content %}
+    {% block content %}{% endblock %}
 
 
 </div>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Добавление продукта{% endblock %}
+
+{% block content %}
+<div class="col-lg-3 col-md-6 col-sm-12" xmlns="http://www.w3.org/1999/html">
+ <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <form method="post" action="" class="form-floating">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="product_name">Название продукта</label>
+                            <input type="text" name="product_name" class="form-control" id="product_name" placeholder="Название" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="product_description">Описание</label>
+                            <textarea type="text" name="product_description" class="form-control" id="product_description" placeholder="Описание продукта" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product_price">Стоимость</label>
+                            <input type="number" name="product_price" class="form-control" id="product_price" placeholder="Стоимость" required>
+                        </div>
+                        <div><div class="mb-3">
+                            <input type="radio" id="4" name="category_name" value='Кондитерские изделия'>
+                            <label for="4">Кондитерские изделия</label></br>
+                            <input type="radio" id="5" name="category_name" value='Молочные продукты'>
+                            <label for="5">Молочные продукты</label></br>
+                            <input type="radio" id="6" name="category_name" value='Мясные продукты'>
+                            <label for="6">Мясные продукты</label>
+
+                        </div></div>
+
+                        <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Добавить</button>
+
+                    </form>
+                </div>
+            </div>
+  </div>
+{% endblock %}

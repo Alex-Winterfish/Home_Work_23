@@ -12,7 +12,7 @@ class Command(BaseCommand):
 
         products = [
             {'product_name': 'Ириска', 'product_description': 'Вязкая конфета, для удаления зубных пломб',
-             'product_price': 54, 'category_name': category},
+             'product_image': '/images/butterscotch.jpg','product_price': 54, 'category_name': category},
             {'product_name': 'Вафли', 'product_description': 'Хрустящая сладость', 'product_price': 43,
              'category_name': category},
             {'product_name': 'Леденцы', 'product_description': 'Долгоиграющая конфета из патоки',
