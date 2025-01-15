@@ -13,6 +13,7 @@ def product_info(request, product_id):
         "product_description": product.product_description,
         "product_price": product.product_price,
         "product_image": product.product_image,
+        "category_name": product.category_name
     }
     return render(request, "product_info.html", context)
 

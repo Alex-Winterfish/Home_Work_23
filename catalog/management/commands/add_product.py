@@ -7,30 +7,36 @@ class Command(BaseCommand):
     help = "Add product to the database"
 
     def handle(self, *args, **kwargs):
-
+        Category.objects.all().delete()
         Product.objects.all().delete()
         category, _ = Category.objects.get_or_create(
-            category_name="Кондитерские изделия"
+            category_name="Кондитерские изделия", category_description="Продукты с большим содержанием сахара"
         )
 
         products = [
             {
                 "product_name": "Ириска",
-                "product_description": "Помадная масса, получаемая при уваривании сгущённого молока с сахаром, мелассой (патокой) и жиром (сливочным или растительным маслом либо маргарином).Вязкая конфета из патоки и битума, для удаления зубных пломб. Употреблять с осторожностью",
+                "product_description": "Помадная масса, получаемая при уваривании сгущённого молока с сахаром, "
+                                       "мелассой (патокой) и жиром (сливочным или растительным маслом либо маргарином)."
+                                       "Вязкая конфета из патоки и битума, для удаления зубных пломб. "
+                                       "Употреблять с осторожностью",
                 "product_image": "butterscotch.jpg",
                 "product_price": 54,
                 "category_name": category,
             },
             {
                 "product_name": "Вафли",
-                "product_description": "разновидность тонкого сухого печенья с оттиском на поверхности. Выпекается из взбитого жидкого теста в специальных формах. Тесто состоит из муки, яиц, сахара (в сладких вафлях) и сливок.",
+                "product_description": "разновидность тонкого сухого печенья с оттиском на поверхности. "
+                                       "Выпекается из взбитого жидкого теста в специальных формах. "
+                                       "Тесто состоит из муки, яиц, сахара (в сладких вафлях) и сливок.",
                 "product_price": 43,
                 "product_image": "vaffels.jpg",
                 "category_name": category,
             },
             {
                 "product_name": "Леденцы",
-                "product_description": "Долгоиграющая конфета из патоки. Вид твёрдых конфет, обычно состоящих из ароматизированного сахара с патокой или кукурузным сиропом",
+                "product_description": "Долгоиграющая конфета из патоки. Вид твёрдых конфет, "
+                                       "обычно состоящих из ароматизированного сахара с патокой или кукурузным сиропом",
                 "product_image": "lolypop.jpg",
                 "product_price": 54,
                 "category_name": category,
@@ -52,7 +58,8 @@ class Command(BaseCommand):
                     )
                 )
 
-        category, _ = Category.objects.get_or_create(category_name="Молочные продукты")
+        category, _ = Category.objects.get_or_create(category_name="Молочные продукты",
+                                                     category_description="Продуты из молока домашних животных")
 
         products = [
             {
@@ -101,7 +108,8 @@ class Command(BaseCommand):
                     )
                 )
 
-        category, _ = Category.objects.get_or_create(category_name="Мясные продукты")
+        category, _ = Category.objects.get_or_create(category_name="Мясные продукты",
+                                                     category_description="Продукты из мяса домашних животных")
 
         products = [
             {

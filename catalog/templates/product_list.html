@@ -1,13 +1,32 @@
 {% extends 'base.html' %}
 
-{% block title %}Главная станица со списком товаров{% endblock %}
+{% block title %}Главная{% endblock %}
 
 
 
 {% block content %}
-<ul class="list-group px-4">
+{% include 'menu.html' %}
+<div class="col-10">
+  <div class="container text-center">
+<h4>Список продуктов</h4>
+  <div class="text-start">
+  <div class="row align-items-center">
+<div class="container">
+<div class="row row-cols-3">
     {% for product in products %}
-    <li class="list-group-item list-group-item-primary "><div class="row"><div class="col-8">{{ product.product_name }}</div><div class="col-4 align-item-end"><a class="btn btn-primary" href="/product_info/{{ product.id }}/">Подробнее</a></div></div></li>
+     <div class="col">
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.product_name }}</h5>
+        <p class="card-text">{{ product.product_description | truncatechars:100 }}</p>
+            <a href="/product_info/{{ product.id }}" class="btn btn-primary">Подробнее</a>
+    </div>
+</div>
+     </div>
     {% endfor %}
-</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 {% endblock %}
