@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'catalog/base.html' %}
 
 {% block title %}Главная{% endblock %}
 
 
 
 {% block content %}
-{% include 'menu.html' %}
+{% include 'catalog/menu.html' %}
 <div class="col-10">
   <div class="container text-center">
 <h4>Список продуктов</h4>
@@ -13,7 +13,7 @@
   <div class="row align-items-center">
 <div class="container">
 <div class="row row-cols-3">
-    {% for product in products %}
+    {% for product in object_list %}
      <div class="col">
 <div class="card mb-3">
     <div class="card-body">

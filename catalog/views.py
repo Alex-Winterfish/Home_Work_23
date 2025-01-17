@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import DetailView, ListView
 from .models import Product, Category
 
 
@@ -18,10 +19,15 @@ def product_info(request, product_id):
     return render(request, "product_info.html", context)
 
 
-def product_list(request):
+class ProductListView(ListView):
+    model = Product
+
+
+
+'''def product_list(request):
     products = Product.objects.all()
     context = {"products": products}
-    return render(request, "product_list.html", context)
+    return render(request, "product_list.html", context)'''
 
 
 def add_product(request):
