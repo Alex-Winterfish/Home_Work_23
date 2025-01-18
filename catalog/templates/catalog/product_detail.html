@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'catalog/base.html' %}
 
 
 {% block title %}Информация о товаре{% endblock %}
 
 {% block content %}
-{% include 'menu.html' %}
+{% include 'catalog/menu.html' %}
 
 {% load my_tags %}
 
@@ -16,14 +16,14 @@
       <div class="row justify-content-center">
     <div class="card" style="width: 36rem">
     <div class="card-header bg-body-secondary">
-      <h6>Категория товаров: {{ category_name }}</h6>
+      <h6>Категория товаров: {{ object.category_name }}</h6>
     </div>
 <img src="{{ product_image | media_filter }}" class="card-img-top" alt="...">
     <div class="card-body">
-    <h3 class="card-title">{{ product_name }}</h3>
-    <p class="card text"><h6>{{ product_description }}</h6></p>
+    <h3 class="card-title">{{ object.product_name }}</h3>
+    <p class="card text"><h6>{{ object.product_description }}</h6></p>
     <div class="d-grid col-12 mx-auto">
-      <button class="btn btn-outline-primary" type="button"><h6>{{ product_price }} руб. Купить</h6></button>
+      <button class="btn btn-outline-primary" type="button"><h6>{{ object.product_price }} руб. Купить</h6></button>
     </div>
     </div>
     </div>
