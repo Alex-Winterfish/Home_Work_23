@@ -19,9 +19,9 @@ class Product(models.Model):
     product_description = models.TextField(max_length=200, verbose_name="Описание")
     product_image = models.ImageField()
     category_name = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="products"
+        Category, on_delete=models.CASCADE, related_name="products", verbose_name='Категория продуктов'
     )
-    product_price = models.IntegerField()
+    product_price = models.IntegerField(verbose_name='Стоимость')
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
