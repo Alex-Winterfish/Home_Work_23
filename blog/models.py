@@ -8,7 +8,7 @@ class BlogPost(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     publish_attribute = models.BooleanField(default=True, verbose_name="Признак публикации")
-    view_count = models.PositiveIntegerField(default=0 ,verbose_name="Количество просмотров")
+    view_count = models.PositiveIntegerField(default=0, verbose_name="Количество просмотров")
 
     def __str__(self):
         return self.title

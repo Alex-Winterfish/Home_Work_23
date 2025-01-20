@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView, CreateView, TemplateView
+from django.views.generic import DetailView, ListView, CreateView, TemplateView, UpdateView
 from .models import BlogPost
+
 class PostListView(ListView):
     model = BlogPost
     def get_queryset(self):
@@ -21,3 +22,12 @@ class PostCreateView(CreateView):
     model = BlogPost
     fields = ['title', 'content', 'publish_attribute']
     success_url = reverse_lazy('blog:posts')
+
+class ContactView(TemplateView):
+    success_url = reverse_lazy('blog:contacts')
+
+class PostUpdateView(UpdateView):
+    model = BlogPost
+    template_name = 'blog/blogpost_update_form.html'
+    fields = ['title', 'content', 'publish_attribute']
+    success_url = reverse_lazy('blog:post_detail')
