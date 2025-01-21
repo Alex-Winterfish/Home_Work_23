@@ -16,5 +16,5 @@ class ProductCreateView(CreateView):
 
 
 class ContactView(TemplateView):
-    success_url = reverse_lazy('catalog:contacts')
+    success_url = reverse_lazy('blog:blog_contacts')
 

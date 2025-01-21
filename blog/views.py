@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView, CreateView, TemplateView, UpdateView
+from django.urls import reverse_lazy, reverse
+from django.views.generic import DetailView, ListView, CreateView, TemplateView, UpdateView, DeleteView
 from .models import BlogPost
 
 class PostListView(ListView):
@@ -28,6 +28,10 @@ class ContactView(TemplateView):
 
 class PostUpdateView(UpdateView):
     model = BlogPost
-    template_name = 'blog/blogpost_update_form.html'
     fields = ['title', 'content', 'publish_attribute']
-    success_url = reverse_lazy('blog:post_detail')
+    def get_success_url(self):
+        return reverse_lazy('blog:post_detail', kwargs={'pk': self.object.pk})
+
+class PostDeleteView(DeleteView):
+    model = BlogPost
+    success_url = reverse_lazy('blog:posts')
