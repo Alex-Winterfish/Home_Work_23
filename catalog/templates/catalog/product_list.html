@@ -19,7 +19,7 @@
     <div class="card-body">
         <h5 class="card-title">{{ product.product_name }}</h5>
         <p class="card-text">{{ product.product_description | truncatechars:100 }}</p>
-            <a href="/product_detail/{{ product.id }}" class="btn btn-primary">Подробнее</a>
+            <a href="{% url 'catalog:product_detail' product.id %}" class="btn btn-primary">Подробнее</a>
     </div>
 </div>
      </div>
