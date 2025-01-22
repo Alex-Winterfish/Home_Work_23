@@ -17,12 +17,3 @@ python manage.py runserver
 добавлен подшаблон menu.html.
 
 
-# Домашняя работа 25
-Контроллеры в приложении Catalog переведены в CBV
-
-Написано проложение Blog
-
-заполнить базу данных из фикстуры blog_fixture.json
-```commandline
-python manage.py loaddata blog_fixture.json --format json 
-```

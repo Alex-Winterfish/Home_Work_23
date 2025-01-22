@@ -1,17 +1,21 @@
 {% extends 'blog/base.html' %}
 
-
 {% block title %}Статья{% endblock %}
 
 {% block content %}
 {% include 'blog/menu.html' %}
 
-{% load my_tags %}
+
 
 <div class="col-10">
 
  <div class="container">
      <h3>{{ object.title }}</h3>
+     {% if object.preview %}
+     <img src="{{ object.preview.url }}">
+     {% else %}
+     <img src="#">
+     {% endif %}
      <h6>{{ object.content }}</h6>
 </div>
 

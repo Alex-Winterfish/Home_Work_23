@@ -12,6 +12,7 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = BlogPost
+    print(model.preview)
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
         self.object.view_count += 1
