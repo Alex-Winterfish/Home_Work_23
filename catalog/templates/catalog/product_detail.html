@@ -26,7 +26,9 @@
     <h3 class="card-title">{{ object.product_name }}</h3>
     <p class="card text"><h6>{{ object.product_description }}</h6></p>
     <div class="d-grid col-12 mx-auto">
-      <button class="btn btn-outline-primary" type="button"><h6>{{ object.product_price }} руб. Купить</h6></button>
+      <button class="btn btn-outline-primary mb-3" type="button"><h6>{{ object.product_price }} руб. Купить</h6></button>
+        <button class="btn btn-outline-primary mb-3" type="button" ><h6><a href="{% url 'catalog:product_update' object.id %}">Редактировать</a></h6></button>
+        <button class="btn btn-outline-primary" type="button"><h6><a href="{% url 'catalog:product_delete' object.id %}">Удалить</a></h6></button>
     </div>
     </div>
     </div>
