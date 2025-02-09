@@ -36,3 +36,7 @@ python manage.py loaddata product_fixture.json --format json
 python manage.py loaddata blog_fixture.json --format json
 ```
 
+# Домашняя работа 26.1
+
+- реализован CRUD с использованием django.form
+- реализованна валидация полей Название продукта, Описание продукта и Цена продукта
