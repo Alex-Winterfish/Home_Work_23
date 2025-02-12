@@ -18,7 +18,11 @@
                         {% csrf_token %}
                         <div class="mb-3">
                         {{ form.as_p }}
+                            {% if object %}
+                            <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Изменить</button>
+                            {% else %}
                         <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Добавить</button>
+                            {% endif %}
                         </div>
 
                     </form>
@@ -26,5 +30,5 @@
             </div>
 
 </div>
-  </div>
+  </div></div></div></div>
 {% endblock %}
