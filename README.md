@@ -40,3 +40,14 @@ python manage.py loaddata blog_fixture.json --format json
 
 - реализован CRUD с использованием django.form
 - реализованна валидация полей Название продукта, Описание продукта и Цена продукта
+
+# Домашняя работа 27
+Для заполнения базы данных через фикстуры:
+```commandline
+python manage.py loaddata category_fixture.json --format json
+python manage.py loaddata product_fixture.json --format json
+```
+
+Реализованна регистрация и аутентификация пользователей в приложении Catalog. При регистрации нового пользователя на почту высылается приветственное письмо.
+
+В файле .env.sample указаны необходимые переменные окружения 

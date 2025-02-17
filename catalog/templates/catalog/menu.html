@@ -1,6 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="col-10">
+            </div>
+            <div class="col-2">
+            {% if user.is_authenticated %}
+            <lu class="nav-item" >
+            <div class="text-bg-dark">Добро жаловать {{ user.username }}!</div>
+            </lu>
+                <lu class="nav-item">
+                    <form method="post" action="{% url 'users:logout' %}">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-primary btn-sm" type="submit" >Выход</button>
+                    </form>
+                </lu>
+            {% else %}
+            <lu class="nav-item">
+                <p><button class="btn btn-outline-primary btn-sm" type="button" ><a href="{% url 'users:login' %}">Вход</a></button></p>
+           </lu>
+            <lu class="nav-item">
+
+                <p><button class="btn btn-outline-primary btn-sm" type="button" ><a href="/users/register/">Регистрация</a></button></p>
+
+            </lu>
+            {% endif %}
+
+            </div>
+          </nav>
+  <div class="row">
     <div class="col-2 bg-dark">
     <div class="col-2 p-3 mb-2 bg-primary-subtitle text-primary-emphasis full-height">
       <nav class="navbar bg-dark">
+
 
           <a class="navbar-brand" href="#">
             <h6><p class="text-white bg-dark">
@@ -9,7 +40,8 @@
   <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3z"/>
 </svg>
               Меню
-            </p></h6>
+
+            </h6>
             <div class="h4 pb-2 mb-4 border-bottom border-secondary"></div>
             <div class="d-grid col-12 mx-auto"><a href="/catalog/products/">
               <button class="btn btn-outline-primary" type="button">Главная</button></a>
