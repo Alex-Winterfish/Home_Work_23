@@ -51,3 +51,26 @@ python manage.py loaddata product_fixture.json --format json
 Реализованна регистрация и аутентификация пользователей в приложении Catalog. При регистрации нового пользователя на почту высылается приветственное письмо.
 
 В файле .env.sample указаны необходимые переменные окружения 
+
+# Домашняя работа 28
+
+Для проверки:
+1. Заполнить базу данных через фикстуры:
+```
+python manage.py loaddata category_fixture.json --format json
+python manage.py loaddata product_fixture.json --format json
+python manage.py loaddata users_fixture.json --format json
+```
+Создаются пользователи:
+
+- Alksbulgakov@gmail.com пароль 12345 - имеет права суперпользователя
+- milk_merchant@mail.com пароль qwer12345678 - продавец молочных продуктов
+- meat_merchant@mail.com пароль qwer12345678 - продавец мясных продуктов
+- candy_merchant@mail.com пароль qwer12345678 - продавец кондитерских изделий
+- product_admin@mail.com пароль qwer12345678 - модератор продуктов
+
+2. Выполнить кастомную команду 
+```commandline
+python manage.py add_group
+```
+создается группа admin_products с правами на удаление и публикацию продукта, пользователь product_admin@mail.com добавляется в группу admin_products
