@@ -38,9 +38,10 @@ class Product(models.Model):
         return self.product_name
 
     class Meta:
-        verbose_name = "продукт"
-        verbose_name_plural = "продукты"
+        verbose_name = "product"
+        verbose_name_plural = "products"
         ordering = ["product_name", "category_name"]
         permissions = [
-            ("can_unpublish_product", "can unpublish product")
+            ("can_unpublish_product", "can unpublish product"),
+            ("can_delete_product", "can delete product")
         ]

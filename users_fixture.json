@@ -1,0 +1,107 @@
+[
+{
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$rdX04gcULtyeWEgHLKiXNW$UkBg9WATRej3sWguMZRBraHw+AwWLenrKa1P+cQBYqA=",
+        "last_login": "2025-02-23T16:01:00.615Z",
+        "is_superuser": true,
+        "username": "Admin",
+        "first_name": "Aleksey",
+        "last_name": "Bulgakov",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-02-15T10:38:53Z",
+        "email": "Alksbulgakov@gmail.com",
+        "avatar": "",
+        "phone": null,
+        "country": "Россия",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$i0mtgb1HgCL3nK8Feq9Jzt$wh/ZfYH3QYNUeb6+UVGJq2R5wrgrsWxjxzx0d+OebdI=",
+        "last_login": "2025-02-23T15:56:53.244Z",
+        "is_superuser": false,
+        "username": "Milk_Merchant",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-02-23T15:56:52.088Z",
+        "email": "milk_merchant@mail.com",
+        "avatar": "",
+        "phone": null,
+        "country": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$SgYyqfDuvrXq7hPhiGRIRj$NqeP26jvV9i7xFx6pQ8ggrw3S6JYlY82AqK5MWA1eko=",
+        "last_login": "2025-02-23T15:58:32.846Z",
+        "is_superuser": false,
+        "username": "Meat_Merchant",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-02-23T15:58:31.712Z",
+        "email": "meat_merchant@mail.com",
+        "avatar": "",
+        "phone": null,
+        "country": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$FaQfiwlPTg5auI7bmBqo9d$kfyVXnLLkHVSAV5hB1bBl8RwkNHbIjN3sFuePNtQ5F0=",
+        "last_login": "2025-02-23T15:59:58.964Z",
+        "is_superuser": false,
+        "username": "Candy_Merchant",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-02-23T15:59:57.775Z",
+        "email": "candy_merchant@mail.com",
+        "avatar": "",
+        "phone": null,
+        "country": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$IidUHt60G68xpsb2hBJnbh$WIF+APWEMn7Yc9iURk3xTcqj9BTw0pKueSHkAYnGG8c=",
+        "last_login": "2025-02-23T16:00:47Z",
+        "is_superuser": false,
+        "username": "ProductAdmin",
+        "first_name": "Aleksey",
+        "last_name": "Bulgakov",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-02-23T16:00:46Z",
+        "email": "product_admin@mail.com",
+        "avatar": "",
+        "phone": "89152292235",
+        "country": "Россия",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

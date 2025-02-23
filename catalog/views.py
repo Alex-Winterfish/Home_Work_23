@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -18,10 +19,23 @@ from .forms import ProductForm, ModeratorProductForm
 
 class ProductListView(ListView):
     model = Product
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['is_in_group'] = user.groups.filter(name='admin_products').exists()
+        return context
+
+
 
 
 class ProductDetailView(DetailView):
     model = Product
+    def get(self, request, *args, **kwargs):
+
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+        print(self.request.user.groups)
+        return self.render_to_response(context)
 
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
@@ -47,8 +61,10 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         user = self.request.user
         if user.has_perm("can_unpublish_product"):
             return ModeratorProductForm
-        else:
+        elif self.object.owner == user:
             return ProductForm
+        else:
+            raise PermissionDenied
 
 
 class ProductDelete(LoginRequiredMixin, DeleteView):

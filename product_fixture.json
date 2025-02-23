@@ -9,7 +9,9 @@
         "category_name": 4,
         "product_price": 54,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 14
     }
 },
 {
@@ -22,7 +24,9 @@
         "category_name": 4,
         "product_price": 43,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-02-22",
+        "publish_attribute": false,
+        "owner": 14
     }
 },
 {
@@ -35,7 +39,9 @@
         "category_name": 4,
         "product_price": 54,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 14
     }
 },
 {
@@ -48,7 +54,9 @@
         "category_name": 5,
         "product_price": 54,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 12
     }
 },
 {
@@ -61,7 +69,9 @@
         "category_name": 5,
         "product_price": 43,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 12
     }
 },
 {
@@ -74,7 +84,9 @@
         "category_name": 5,
         "product_price": 54,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 12
     }
 },
 {
@@ -87,7 +99,9 @@
         "category_name": 6,
         "product_price": 54,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 13
     }
 },
 {
@@ -100,7 +114,9 @@
         "category_name": 6,
         "product_price": 43,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 13
     }
 },
 {
@@ -113,7 +129,39 @@
         "category_name": 6,
         "product_price": 54,
         "created_at": "2025-01-09",
-        "updated_at": "2025-01-22"
+        "updated_at": "2025-01-22",
+        "publish_attribute": false,
+        "owner": 13
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 34,
+    "fields": {
+        "product_name": "Хлеб",
+        "product_description": "Хлеб",
+        "product_image": "",
+        "category_name": 4,
+        "product_price": 3,
+        "created_at": "2025-02-22",
+        "updated_at": "2025-02-22",
+        "publish_attribute": false,
+        "owner": null
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 38,
+    "fields": {
+        "product_name": "Бедро куриное",
+        "product_description": "куриное бедро",
+        "product_image": "",
+        "category_name": 6,
+        "product_price": 23,
+        "created_at": "2025-02-23",
+        "updated_at": "2025-02-23",
+        "publish_attribute": false,
+        "owner": 13
     }
 }
 ]
