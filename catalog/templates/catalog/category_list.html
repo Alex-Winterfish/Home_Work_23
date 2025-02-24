@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Список категорий{% endblock %}
+
+
+
+{% block content %}
+{% include 'catalog/menu.html' %}
+
+<div class="col-10">
+  <div class="container text-center">
+<h4>Список категорий</h4>
+  <div class="text-start">
+  <div class="row align-items-center">
+<div class="container">
+<div class="row row-cols-3">
+    {% for category in object_list %}
+     <div class="col">
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ category.category_name }}</h5>
+        <p class="card-text">{{ category.category_description | truncatechars:100 }}</p>
+            <a href="#" class="btn btn-primary">Продукты в категории</a>
+    </div>
+</div>
+     </div>
+    {% endfor %}
+
+{% endblock %}

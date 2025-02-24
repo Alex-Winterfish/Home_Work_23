@@ -13,8 +13,9 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from .models import Product
+from .models import Product, Category
 from .forms import ProductForm, ModeratorProductForm
+from .services import ProductService
 
 
 class ProductListView(ListView):
@@ -30,12 +31,6 @@ class ProductListView(ListView):
 
 class ProductDetailView(DetailView):
     model = Product
-    def get(self, request, *args, **kwargs):
-
-        self.object = self.get_object()
-        context = self.get_context_data(object=self.object)
-        print(self.request.user.groups)
-        return self.render_to_response(context)
 
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
@@ -78,14 +73,16 @@ class ContactView(TemplateView):
     login_url = reverse_lazy("catalog:product_list")
 
 
-class PublishProductView(LoginRequiredMixin, View):
-    def post(self, request, product_id):
-        product = get_object_or_404(Product, id=product_id)
 
-        if not request.user.has_perm("can_unpublish_product"):
-            return HttpResponseForbidden("У вас нет прав доступа для публикации продукта")
 
-        product.publish_attribute = True
-        product.save()
+class CategoryListView(ListView):
+    model = Category
 
-        return redirect("products:product_list")
+
+class CategoryProductsListView(ListView):
+    model = ProductService.get_category_product()
+
+
+
+
+
