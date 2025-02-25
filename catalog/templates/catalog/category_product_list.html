@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'catalog/base.html' %}
+
+{% block title %}Список категорий{% endblock %}
+
+
+
+{% block content %}
+{% include 'catalog/menu.html' %}
+
+<div class="col-10">
+  <div class="container text-center">
+<h4>Список продуктов</h4>
+  <div class="text-start">
+  <div class="row align-items-center">
+<div class="container">
+<div class="row row-cols-3">
+    {% for product in object_list %}
+     <div class="col">
+<div class="card mb-3">
+    <div class="card-body">
+        {% if product.product_image  %}
+<img src="{{ product.product_image.url }}" class="card-img-top" alt="...">
+        {% else %}
+        <img src="#" class="card-img-top" alt="...">
+        {% endif %}
+        <h5 class="card-title">{{ product.product_name }}</h5>
+        <p class="card-text">{{ product.product_description | truncatechars:100 }}</p>
+
+            <a href="{% url 'catalog:product_detail' product.id %}" class="btn btn-primary">Подробнее</a>
+        {% if product.owner == user %}
+            <a href="{% url 'catalog:product_update' product.id %}" class="btn btn-primary">Редактировать</a>
+        {% endif %}
+        {% if is_in_group or product.owner == user %}
+            <a href="{% url 'catalog:product_delete' product.id %}" class="btn btn-primary">Удалить</a>
+        {% endif %}
+    </div>
+</div>
+     </div>
+        {% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponseForbidden
-from django.shortcuts import get_object_or_404, redirect
+from django.core.cache import cache
 from django.urls import reverse_lazy
-from django.views import View
 from django.views.generic import (
     DetailView,
     ListView,
@@ -26,6 +24,12 @@ class ProductListView(ListView):
         context['is_in_group'] = user.groups.filter(name='admin_products').exists()
         return context
 
+    def get_queryset(self):
+        queryset = cache.get('my_queryset')
+        if not queryset:
+            queryset = super().get_queryset()
+            cache.set('my_queryset', queryset, 60 * 15)
+        return queryset
 
 
 
@@ -80,7 +84,14 @@ class CategoryListView(ListView):
 
 
 class CategoryProductsListView(ListView):
-    model = ProductService.get_category_product()
+    model = Product
+    template_name = "catalog/category_product_list.html"
+    context_object_name = "products"
+
+    def get_queryset(self):
+        category_id = self.kwargs.get("pk")
+        products = ProductService.get_category_product(category_id)
+        return products
 
 
 
