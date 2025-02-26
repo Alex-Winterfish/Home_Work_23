@@ -1,9 +1,10 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from .models import Product
+from users.forms import  StyleFormMixin
 
 
-class ProductForm(forms.ModelForm):
+class ProductForm(StyleFormMixin, forms.ModelForm):
 
     restrictions = [
         "казино",
@@ -27,23 +28,6 @@ class ProductForm(forms.ModelForm):
             "category_name"
         ]
 
-    def __init__(self, *args, **kwargs):
-
-        super(ProductForm, self).__init__(*args, **kwargs)
-
-        self.fields["product_name"].widget.attrs.update(
-            {"class": "form-control", "placeholder": "Введите название продукта"}
-        )
-
-        self.fields["product_description"].widget.attrs.update(
-            {"class": "form-control", "placeholder": "Введите описание продукта"}
-        )
-
-        self.fields["product_price"].widget.attrs.update(
-            {"class": "form-control", "placeholder": "Введите цену продукта"}
-        )
-
-        self.fields["category_name"].widget.attrs.update({"class": "form-control"})
 
     def clean_product_name(self):
         product_name = self.cleaned_data.get("product_name")
@@ -77,3 +61,15 @@ class ProductForm(forms.ModelForm):
             raise ValidationError("Цена не может быть меньше или равна нулю")
 
         return product_price
+
+class ModeratorProductForm(ProductForm):
+    class Meta:
+        model = Product
+        fields = [
+            "product_name",
+            "product_description",
+            "product_price",
+            "category_name",
+            "publish_attribute"
+        ]
+

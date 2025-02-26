@@ -1,11 +1,12 @@
 {% extends 'catalog/base.html' %}
 
-{% block title %}Главная{% endblock %}
+{% block title %}Список категорий{% endblock %}
 
 
 
 {% block content %}
 {% include 'catalog/menu.html' %}
+
 <div class="col-10">
   <div class="container text-center">
 <h4>Список продуктов</h4>
@@ -17,8 +18,14 @@
      <div class="col">
 <div class="card mb-3">
     <div class="card-body">
+        {% if product.product_image  %}
+<img src="{{ product.product_image.url }}" class="card-img-top" alt="...">
+        {% else %}
+        <img src="#" class="card-img-top" alt="...">
+        {% endif %}
         <h5 class="card-title">{{ product.product_name }}</h5>
         <p class="card-text">{{ product.product_description | truncatechars:100 }}</p>
+
             <a href="{% url 'catalog:product_detail' product.id %}" class="btn btn-primary">Подробнее</a>
         {% if product.owner == user %}
             <a href="{% url 'catalog:product_update' product.id %}" class="btn btn-primary">Редактировать</a>
@@ -29,10 +36,11 @@
     </div>
 </div>
      </div>
-    {% endfor %}
+        {% endfor %}
 </div>
 </div>
 </div>
 </div>
 </div>
+
 {% endblock %}
