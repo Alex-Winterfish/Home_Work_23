@@ -25,10 +25,10 @@ class ProductListView(ListView):
         return context
 
     def get_queryset(self):
-        queryset = cache.get('my_queryset')
+        queryset = cache.get('product_list')
         if not queryset:
             queryset = super().get_queryset()
-            cache.set('my_queryset', queryset, 60 * 15)
+            cache.set('product_list', queryset, 60 * 15)
         return queryset
 
 
@@ -90,8 +90,11 @@ class CategoryProductsListView(ListView):
 
     def get_queryset(self):
         category_id = self.kwargs.get("pk")
-        products = ProductService.get_category_product(category_id)
-        return products
+        queryset = cache.get(f'products_in_category_{category_id}')
+        if not queryset:
+            queryset = ProductService.get_category_product(category_id)
+            cache.set(f'products_in_category_{category_id}', queryset, 60*4)
+        return queryset
 
 
 
